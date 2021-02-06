@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block title %}New Book Form{% endblock title %}
+
+
+{% block content %}
+
+  <div id="main">
+    <h2>Add New Book Record</h2>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" class="sub" value="Submit">
+    </form>
+  </div>
+
+{% endblock content %}

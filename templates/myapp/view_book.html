@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}View All Book Records{% endblock title %}
+
+{% block content %}
+
+<div id="main">
+  <h2>View All Book Records</h2>
+  <table>
+    <thead>
+      <th>Book Id</th>
+      <th>Book Title</th>
+      <th>Book Price</th>
+      <th>Book Author</th>
+      <th>Book Publisher</th>
+    </thead>
+    {% for book in books %}
+    <tr>
+      <td>{{book.id}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.publisher}}</td>
+      <td><a href="{% url 'edit-book' book.id %}" class="btn">Edit</a></td>
+      <td><a href="{% url 'delete-book' book.id %}" class="btn">Delete</a></td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock content %}

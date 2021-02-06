@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/BRMstyle.css' %}">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Book Record Management</h1>
+      <div id="nav">
+        <a href="{% url 'view-book' %}">View All</a>
+        <a href="{% url 'new-book' %}">Add New</a>
+        <a href="{% url 'search-book' %}">Search</a>
+        <a href="{% url 'logout' %}">Logout</a>
+      </div>
+      <h2>Hello, {{username}}</h2>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+  </body>
+</html>

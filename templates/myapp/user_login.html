@@ -1,0 +1,30 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Login here{% endblock title%}
+
+{% block content %}
+  <div id="main">
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="username">Username</label></td>
+          <td><input type="text" name="username" value="" id='username'></td>
+        </tr>
+
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" name="password" value="" id='password'></td>
+        </tr>
+
+
+        <tr>
+          <td></td>
+          <td><input type="submit" name="" value="Login"></td>
+        </tr>
+
+      </table>
+    </form>
+    <p>{{error}}</p>
+  </div>
+{% endblock content %}

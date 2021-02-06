@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block title %} Edit Book Record {% endblock title %}
+
+
+{% block content%}
+  <div id="main">
+    <h2>Edit Book Record</h2>
+    {% if messages %}
+      {% for message in messages %}
+        {{message}}
+      {% endfor %}
+    {% endif %}
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="" value="Edit">
+    </form>
+  </div>
+{% endblock content %}
